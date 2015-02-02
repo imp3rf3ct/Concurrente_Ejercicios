@@ -17,3 +17,7 @@ En el se encuentran los archivos codigo fuente de la practica 1
 
 include/ :
 En el se encuentran los archivos de cabecera que incluyen funciones necesarias para el funcionamiento del programa
+
+EJERCICIO 1
+---------
+Creacion de procesos simple con acto de espera a su finalización
