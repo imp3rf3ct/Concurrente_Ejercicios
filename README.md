@@ -9,3 +9,6 @@ p2/ Ejercicios de la practica 2
 --------------------------------
 p3/ Ejercicios de la practica 3
 --------------------------------
+esqueleto
+-------------
+Modelo de procesos concurrente, este modelo no es compilable, solamente se utiliza como modelo orientativo y aclarativo
