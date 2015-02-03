@@ -20,4 +20,10 @@ En el se encuentran los archivos de cabecera que incluyen funciones necesarias p
 
 EJERCICIO 1
 ---------
-Creacion de procesos simple con acto de espera a su finalización
+Creacion de procesos simple con acto de espera a su finalización: `./manager <nºPA> <nºPB> <TimeMax>`
+  
+  `MANAGER - Crea los procesos y los gestiona`
+  
+  `PA - Duerme x segundos y termina`
+  
+  `PB - Duerme x segundos en bucle`
