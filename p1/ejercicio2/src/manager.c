@@ -170,7 +170,7 @@ void terminate_processes(void) {
     if(g_process_table[i].pid != 0){
       printf("[MANAGER] Terminating process [%d]\n",g_process_table[i].pid);
       if(kill(g_process_table[i].pid,SIGINT) == -1){
-	fprintf(stderr,"[MANAGER] Error killing process [%d] : %s",g_process_table[i].pid,strerror(errno));
+	fprintf(stderr,"[MANAGER] Error killing process [%d] : %s\n",g_process_table[i].pid,strerror(errno));
       }
       g_process_table[i].pid = 0;
     }
