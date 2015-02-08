@@ -23,9 +23,9 @@ donde <n_procesos_PA> representa el número de procesos de tipo PA a crear, <n_p
 
 La finalización de la simulación tendrá lugar si se cumple una de las dos condiciones siguientes:
 
-1.Todos los procesos de tipo PA finalizan su ejecución. El proceso manager, tras detectar esta
+1- Todos los procesos de tipo PA finalizan su ejecución. El proceso manager, tras detectar esta
 situación, enviará una señal de finalización a los procesos de tipo PB y liberará recursos.
 
-2. El usuario pulsa la combinación de teclas Ctrl + C. El proceso manager, tras detectar este evento,
+2- El usuario pulsa la combinación de teclas Ctrl + C. El proceso manager, tras detectar este evento,
 enviará una señal de finalización a todos los procesos de tipo PA y PB que estén en ejecución y liberará
 recursos.
