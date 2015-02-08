@@ -27,3 +27,14 @@ Creacion de procesos simple con acto de espera a su finalización: `./manager <n
   `PA - Duerme x segundos y termina`
   
   `PB - Duerme x segundos en bucle`
+
+EJERCICIO 2
+--------
+Creacion de procesos simple con varios actos: `./manager <archivo> <patrón>`
+  
+  `MANAGER - Crea los procesos y los gestiona`
+  
+  `CONTADOR - Cuenta las palabras que tiene cada linea del archivo (1 Proceso contador por linea)`
+  
+  `PROCESADOR - Busca un patrón en la linea del archivo (1 Proceso procesador por linea)`
+  
