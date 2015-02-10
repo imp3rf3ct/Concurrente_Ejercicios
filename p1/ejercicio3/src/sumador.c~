@@ -1,0 +1,89 @@
+/* Codigo de sumador.c Abre un archivo indicado con un numero en su interior
+   natural del 1 al 10 y le suma 1 unidad */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <errno.h>
+#include <signal.h>
+#include <unistd.h>
+
+void install_signal_handler();
+void signal_handler(int sig);
+void parse_argv(int argc,char *argv[],char **ruta);
+void run(char *ruta);
+void getfp(char *ruta,FILE **fp);
+void getnum(FILE *fp,int *num);
+void setnum(FILE *fp,int num);
+
+int main(int argc, char *argv[]){
+  char *ruta;
+  
+  install_signal_handler();
+  parse_argv(argc,argv,&ruta);
+  run(ruta);
+
+  return EXIT_SUCCESS;
+}
+
+void install_signal_handler(){
+  if(signal(SIGINT,signal_handler) == SIG_ERR){
+    fprintf(stderr,"[SUMADOR %d] Signal install error: %s\n",getpid(),strerror(errno));
+    _exit(EXIT_FAILURE);
+  }
+}
+
+void signal_handler(int sig){
+  printf("[SUMADOR %d] Terminated (SIGINT)\n",getpid());
+  _exit(EXIT_SUCCESS);
+}
+
+void parse_argv(int argc,char *argv[],char **ruta){
+  if(argc != 2){
+    fprintf(stderr,"[SUMADOR %d] Argument error: %s\n",getpid(),strerror(errno));
+    _exit(EXIT_FAILURE);
+  }
+
+  *ruta = argv[1];
+}
+
+void run(char *ruta){
+  FILE *fp;
+  int num;
+  
+  getfp(ruta,&fp);
+  getnum(fp,&num);
+  printf("[SUMADOR %d] Sumando 1 al numero %d\n",getpid(),num);
+  setnum(fp,num+1);
+  fclose(fp);
+
+}
+
+void getfp(char *ruta,FILE **fp){
+  if((*fp = fopen(ruta,"rw")) == NULL){
+    fprintf(stderr,"[SUMADOR %d] File Open Error: %s\n",getpid(),strerror(errno));
+    _exit(EXIT_FAILURE);
+  }
+}
+
+void getnum(FILE *fp,int *num){
+  char c;
+  char *cnum;
+  
+  while((c = fgetc(fp)) != EOF){
+    cnum = cnum + c;
+  }
+  
+  *num = atoi(cnum);
+}
+
+void setnum(FILE *fp,int num){
+  char *cnum = NULL;
+
+  sprintf(cnum,"%d",num);
+ 
+  if(fwrite(cnum,1,sizeof(cnum),fp) != sizeof(cnum)){
+    fprintf(stderr,"[SUMADOR %d] Write Error: %s\n",getpid(),strerror(errno));
+    _exit(EXIT_FAILURE);
+  }
+}
