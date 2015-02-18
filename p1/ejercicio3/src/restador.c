@@ -49,23 +49,24 @@ void parse_argv(int argc,char *argv[],char **ruta){
 }
 
 void run(char *ruta){
-  int num;
+  int num,i;
   FILE *fp;
   char cnum [MAX_SIZE],c[MAX_SIZE];
 
   if((fp = fopen(ruta,"r")) == NULL){
     fprintf(stderr,"[RESTADOR %d] File Open Error 'R': %s\n",getpid(),strerror(errno));
     _exit(EXIT_FAILURE);
-    }
+  }
 
-  if((c[0] = fgetc(fp)) == EOF){
-    fprintf(stderr,"[RESTADOR %d] Read Error: %s\n",getpid(),strerror(errno));
-    _exit(EXIT_FAILURE);
+  for(i = 0;i<MAX_SIZE;i++){
+    if((c[i] = fgetc(fp)) == EOF){
+      break;
+    }
   }
 
   fclose(fp);
 
-  c[1] = '\0';
+  c[i] = '\0';
   printf("%s",c);
 
   num = atoi(c);
