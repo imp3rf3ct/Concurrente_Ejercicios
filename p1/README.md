@@ -38,3 +38,13 @@ Creacion de procesos simple con varios actos: `./manager <archivo> <patrón>`
   
   `PROCESADOR - Busca un patrón en la linea del archivo (1 Proceso procesador por linea)`
   
+EJERCICIO 3
+--------
+Creacion de procesos con condicion de carrera (al no estar en sincronizacion): `./manager <Filepath> <nºproc>`
+
+  `MANAGER - Crea los procesos y los gestiona`
+  
+  `SUMADOR - Suma una unidad al entero que contiene el archivo`
+  
+  `RESTADOR - Resta una unidad al entero que contiene el archivo`
+  
