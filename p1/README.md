@@ -1,7 +1,7 @@
 Practica 1 Programacion Concurrente y en Tiempo Real
 ====================================================
 
-En cada ejercicio encontraras 5 tipos de directorios:
+En cada ejercicio encontraras 5 tipos de directorios segun se necesite o no:
 
 data/ :
 En el se encuentran los archivos necesarios para testear los archivos "exec"
