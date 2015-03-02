@@ -22,7 +22,7 @@ contador: $(DIROBJ)contador.o
 	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS)
 
 $(DIROBJ)%.o: $(DIRSRC)%.c
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $(CFLAGS) $^ -o $ 
 
 test:
 	./$(DIREXE)manager data/test.txt What
