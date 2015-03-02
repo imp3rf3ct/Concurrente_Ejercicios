@@ -26,3 +26,11 @@ Creacion de procesos Decoder para decodificar una cadena introducida por la line
 
 `DECODER - Decodifica la cadena e invoca al proceso:`
           `SYM_DECODER - Si es necesario traducir algun caracter especial`
+
+EJERCICIO 2
+---------
+Creacion de procesos Factorer para factorizar un numerador y un denominador dado por la linea de argumentos: `./manager <numerador> <denominador>`
+
+`MANAGER - Crea los procesos y los gestiona`
+
+`FACTORER - Factoriza los numeros dados y simplifica el resultado`
